@@ -1,4 +1,3 @@
-
 import {Link} from 'react-router-dom'
 import {products} from '../data/products'
 
@@ -16,6 +15,11 @@ const ProductList = () => {
                     <p>설명: {product.description}</p>
                 </div>
             ))}
+            <div>
+                <Link to="/add-product">
+                    <button>등록하기</button>
+                </Link>
+            </div>
         </section>
     )
 }
