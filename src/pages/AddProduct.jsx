@@ -38,10 +38,10 @@ export default function AddProduct(){
         console.log("상품추가",formData);
         alert('상품이 추가되었습니다.')
         
+        
+            //상품목록페이지로 이동
+            navigate('/products')
     }
-
-    //상품목록페이지로 이동
-    navigate('/products')
 
     return(
         <>
