@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { users } from '../data/users';
 import { useNavigate } from 'react-router-dom';
 
-export default function SinIn(){
+export default function SinIn({ onLogin }) {
 
     //입력데이터를 객체로 통합
     const [LogInData, setLogInData] = useState({
@@ -35,6 +35,7 @@ export default function SinIn(){
         );
         if(mathed){
             setLogInResult('로그인 성공');
+            onLogin(userId); // 로그인 성공 시 App 컴포넌트에 로그인 상태 전달
             console.log(`로그인성공: ID:${userId},PW:${password}`);
 
             navigate('/'); // 로그인 성공 시 메인 페이지로 이동
