@@ -43,35 +43,43 @@ export default function AddProduct(){
             navigate('/products')
     }
 
+    const handleCancel=()=>{
+        setFormData({name: '', price:'', description:''})
+    }
+
     return(
         <>
             <div className="add-product">
-                <h2>상품등록</h2>
-                <form onSubmit={handleSubmit}>
-                    <div>
+                <section>
+                    <h2>상품등록</h2>
+                    <form onSubmit={handleSubmit}>
+                    <div className="addProduct">
                         <label htmlFor="name">상품명:</label>
                         <input type="text"
                             id="name"
                             name="name"
+                            placeholder="상품명을 입력하세요."
                             value={formData.name}
                             onChange={handleChange}
                         />
                     </div>
-                     <div>
+                     <div className="addProduct">
                         <label htmlFor="price">상품가격:</label>
                         <input type="number"
                             id="name"
                             min={1}
                             name="price"
+                            placeholder="상품가격을 입력하세요."
                             value={formData.price}
                             onChange={handleChange}
                         />
                     </div>
-                     <div>
+                     <div className="addProduct">
                         <label htmlFor="description">상품설명:</label>
                         <textarea type="text"
                             id="name"
                             name="description"
+                            placeholder="상품설명을 입력하세요."
                             rows={5}
                             cols={30}
                             value={formData.description}
@@ -80,8 +88,12 @@ export default function AddProduct(){
                     </div>
                     <div>
                         <button type="submit">등록</button>
+                        <button type="button" onClick={handleCancel} className="cancel-btn">
+                            취소
+                        </button>
                     </div>
-                </form>
+                    </form>
+                </section>
             </div>
         </>
     )

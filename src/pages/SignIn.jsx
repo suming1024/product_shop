@@ -49,20 +49,22 @@ export default function SinIn({ onLogin }) {
     return(
         <>
             <div>
-                <h2>로그인</h2>
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <input type="text" name="userId" placeholder="아이디" onChange={handleChange} value={LogInData.userId} />
-                    </div>
-                    <div>
-                        <input type="password" name="password" placeholder="비밀번호" onChange={handleChange} value={LogInData.password} />
-                    </div>
-                    <button type="submit">로그인</button>
-                </form>
+                <section>
+                   <h2>로그인</h2>
+                    <form onSubmit={handleSubmit}>
+                        <div>
+                            <input type="text" name="userId" placeholder="아이디" onChange={handleChange} value={LogInData.userId} />
+                        </div>
+                        <div>
+                            <input type="password" name="password" placeholder="비밀번호" onChange={handleChange} value={LogInData.password} />
+                        </div>
+                        <button type="submit">로그인</button>
+                    </form>
                 {/* 로그인결과메세지 */}
                 {LogInResult === '로그인 실패' && (
                     <p style={{ color: 'red' }}>로그인 실패</p>
                 )}
+                </section>
             </div>
         </>
     )
